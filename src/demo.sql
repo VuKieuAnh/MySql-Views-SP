@@ -284,7 +284,7 @@ CREATE PROCEDURE get_total_order_quantity(IN so_don_hang INT(100))
 BEGIN
     SELECT order_details.order_quantity, sum(order_quantity)'Tong luong don dat hang' FROM order_details
         INNER JOIN orders o on order_details.order_number = o.order_number
-        WHERE O.order_number = so_don_hang GROUP BY order_quantity;
+        WHERE o.order_number = so_don_hang GROUP BY order_quantity;
 end;
 
 CALL get_total_order_quantity(1);
